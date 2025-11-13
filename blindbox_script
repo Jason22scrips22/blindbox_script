@@ -1,0 +1,11 @@
+#local boxes = {}
+for _, v in pairs(game:GetService("Workspace"):GetChildren()) do
+    if v.Name == "blindbox" then
+        table.insert(boxes, v)
+    end
+end
+
+for _, box in pairs(boxes) do
+    game:GetService("ReplicatedStorage").ClaimBox:FireServer(box.Name)
+end
+blindbox_script
